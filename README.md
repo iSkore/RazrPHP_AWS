@@ -44,6 +44,21 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
  * **12.** When your PHP Project is ready. Put all your files into one folder. Name the folder **[whatever]**, then compress the files inside **[whatever]**. Do not compress the whole folder. Only compress the files in the folder. If one of these files includes your **index.php** or **index.html**, your project will show up on EBS default URL.
  * **13.** Your project should be called *Archive.zip*. Go to EBS, upload the zip and there you go! All finished with AWS Setup!
 
+#### **Razr Setup**
+ * **1.** Download RazrPHP and put it in your home folder (same folder as aws)
+ * **2.** At the top of every file using RAZR, put in:
+```php
+require ('razrAWS.php');
+use razrPHP as RAZR;
+$razr = new RAZR\rDynamo ();
+```
+ * **3.** Thats it! You can now access RAZR Functions easily.
+
+### **Razr Methods**
+ * #### **DynamoDB**
+    * ##### Describe Table
+        *  `$t = $razr->describeTable('qnaMainFrame');`
+
 ## License
 
 PHP Stack is released under the MIT License:
