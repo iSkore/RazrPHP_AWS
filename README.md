@@ -26,6 +26,7 @@ Simple to make AWS calls. Settup is easy too!
 ```
 nano ~/.aws/creds
 ```
+3. The *nano* function page will open up. You will see ```GNU nano 2.0.6``` at the top
 
 
 ## License
