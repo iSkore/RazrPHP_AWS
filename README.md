@@ -20,7 +20,7 @@ Have all the major functions ready, accessible, and easy to use at your finger t
 Simple to make AWS calls. Settup is easy too!
 
 #### **AWS Setup**
-###### * AWS doesn't lay out the Credentials setup for you set by step, so I will.
+###### - AWS doesn't lay out the Credentials setup for you set by step, so I will.
     1. Open Terminal
     2. If you haven't created your credentials yet, in Terminal's fresh page, type in:
         '''
