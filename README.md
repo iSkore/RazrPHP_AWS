@@ -56,9 +56,16 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 
 #### **Razr Methods**
 ##### &nbsp;&nbsp;DynamoDB
-###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Describe Table
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Describe Table
 ```PHP
     $razr->describeTable('[table_name]');
+
+    //responses will be in JSON format. So you can access your response like:
+    $t->getPath('Table/ProvisionedThroughput/ReadCapacityUnits');
+    
+    OR
+    
+    $t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
 ```
 
 ## License
