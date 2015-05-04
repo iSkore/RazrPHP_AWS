@@ -23,9 +23,9 @@ Simple to make AWS calls. Settup is easy too!
 ###### - AWS doesn't lay out the Credentials setup for you set by step, so I will.
 1. Open Terminal
 2. If you haven't created your credentials yet, in Terminal's fresh page, type in:
-'''
+```
 nano ~/.aws/creds
-'''
+```
 
 
 ## License
