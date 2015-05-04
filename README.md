@@ -28,11 +28,11 @@ Simple to make AWS calls. Settup is easy too!
         `</br>
     * The *nano* function page will open up. You will see `GNU nano 2.0.6...` at the top.
  * 3. Inside the *nano* page, type in:</br>
-`
+```
 [default]
 aws_access_key_id = ABCDEFGHIJKLMNOPQRSTUVWXYZ
 aws_secret_access_key = s0m3+CR42Y+l3tt3rS+i5y0ur53cr3tK3y
-`
+```
  * 4. Once you've typed it out, hit **CONTROL^X** (Yes...Control, not CMD).
  * 5. Hit **Y** then **ENTER**
 
