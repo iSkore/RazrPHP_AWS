@@ -25,8 +25,8 @@ Simple to make AWS calls. Settup is easy too!
  * 2. If you haven't created your credentials yet, in Terminal's fresh page, type in:</br>
         `
         nano ~/.aws/creds
-        `
-        * The *nano* function page will open up. You will see `GNU nano 2.0.6...` at the top.
+        `</br>
+    * The *nano* function page will open up. You will see `GNU nano 2.0.6...` at the top.
  * 3. hello
 
 
