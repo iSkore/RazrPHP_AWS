@@ -30,17 +30,19 @@ Simple to make AWS calls. Settup is easy too!
  * 3. Inside the *nano* page, type in:</br>
 ```
 [default]
-aws_access_key_id = [public_key_ABCDEFGHIJKLMNOPQRSTUVWXYZ]
-aws_secret_access_key = [private_key_s0m3+CR42Y+l3tt3rS+i5y0ur53cr3tK3y]
+aws_access_key_id = public_key_ABCDEFGHIJKLMNOPQRSTUVWXYZ
+aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 ```
  * 4. Once you've typed it out, hit **CONTROL + X** (Yes...Control, not Command).
  * 5. Hit **Y** then **ENTER**
  * 6. Get the [AWS_SDK_PHP](https://github.com/aws/aws-sdk-php/releases/tag/2.8.2)
- * 7. Go to Elastic Beanstalk
+ * 7. Go to Your Elastic Beanstalk
  * 8. When you are done creating your app and you see the *Overview* screen with the green check. Look to the side and hit *Configuration*.
  * 9. Under **Software Configuration** -> **Document root:** type in: **/**
  * 10. Under **Property Name** -> **AWS_ACCESS_KEY_ID** type in: **[your_access_key]**
  * 11. Under **AWS_ACCESS_KEY_ID** is the **AWS_SECRET_KEY**, type in: **[your_secret_key]**
+ * 12. When your PHP Project is ready. Put all your files into one folder. Name the folder [whatever], then compress the files inside [whatever]. Do not compress the whole folder. Only compress the files in the folder. If one of these files includes your **index.php** or **index.html**, your project will show up on EBS default URL.
+ * 13. Your project should be called Archive.zip. Go to EBS, upload the zip and there you go! All finished with AWS Setup!
 
 ## License
 
