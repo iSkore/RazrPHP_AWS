@@ -33,8 +33,14 @@ Simple to make AWS calls. Settup is easy too!
 aws_access_key_id = [public_key_ABCDEFGHIJKLMNOPQRSTUVWXYZ]
 aws_secret_access_key = [private_key_s0m3+CR42Y+l3tt3rS+i5y0ur53cr3tK3y]
 ```
- * 4. Once you've typed it out, hit **CONTROL^X** (Yes...Control, not Command).
+ * 4. Once you've typed it out, hit **CONTROL + X** (Yes...Control, not Command).
  * 5. Hit **Y** then **ENTER**
+ * 6. Get the [AWS_SDK_PHP](https://github.com/aws/aws-sdk-php/releases/tag/2.8.2)
+ * 7. Go to Elastic Beanstalk
+ * 8. When you are done creating your app and you see the *Overview* screen with the green check. Look to the side and hit *Configuration*.
+ * 9. Under **Software Configuration** -> **Document root:** type in: **/**
+ * 10. Under **Property Name** -> **AWS_ACCESS_KEY_ID** type in: **[your_access_key]**
+ * 11. Under **AWS_ACCESS_KEY_ID** is the **AWS_SECRET_KEY**, type in: **[your_secret_key]**
 
 ## License
 
