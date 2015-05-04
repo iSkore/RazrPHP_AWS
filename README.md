@@ -30,10 +30,10 @@ Simple to make AWS calls. Settup is easy too!
  * 3. Inside the *nano* page, type in:</br>
 ```
 [default]
-aws_access_key_id = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-aws_secret_access_key = s0m3+CR42Y+l3tt3rS+i5y0ur53cr3tK3y
+aws_access_key_id = [public_key_ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+aws_secret_access_key = [private_key_s0m3+CR42Y+l3tt3rS+i5y0ur53cr3tK3y]
 ```
- * 4. Once you've typed it out, hit **CONTROL^X** (Yes...Control, not CMD).
+ * 4. Once you've typed it out, hit **CONTROL^X** (Yes...Control, not Command).
  * 5. Hit **Y** then **ENTER**
 
 ## License
