@@ -1,4 +1,4 @@
-# razrPHP
+# RazrPHP
 
 Program in PHP with AWS? Razr PHP Framework cuts down on a lot of hastle and makes AWS even easier to use. Functionality with many systems including EC2, DynamoDB, S3, and more to come.
 
@@ -41,8 +41,8 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
  * 9. Under **Software Configuration** -> **Document root:** type in: **/**
  * 10. Under **Property Name** -> **AWS_ACCESS_KEY_ID** type in: **[your_access_key]**
  * 11. Under **AWS_ACCESS_KEY_ID** is the **AWS_SECRET_KEY**, type in: **[your_secret_key]**
- * 12. When your PHP Project is ready. Put all your files into one folder. Name the folder [whatever], then compress the files inside [whatever]. Do not compress the whole folder. Only compress the files in the folder. If one of these files includes your **index.php** or **index.html**, your project will show up on EBS default URL.
- * 13. Your project should be called Archive.zip. Go to EBS, upload the zip and there you go! All finished with AWS Setup!
+ * 12. When your PHP Project is ready. Put all your files into one folder. Name the folder **[whatever]**, then compress the files inside **[whatever]**. Do not compress the whole folder. Only compress the files in the folder. If one of these files includes your **index.php** or **index.html**, your project will show up on EBS default URL.
+ * 13. Your project should be called *Archive.zip*. Go to EBS, upload the zip and there you go! All finished with AWS Setup!
 
 ## License
 
