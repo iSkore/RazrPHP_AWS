@@ -45,17 +45,17 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
  * **13.** Your project should be called *Archive.zip*. Go to EBS, upload the zip and there you go! All finished with AWS Setup!
 
 #### **Razr Setup**
- * **1.** Download RazrPHP and put it in your home folder (same folder as aws)
- * **2.** At the top of every file using RAZR, put in:
+ * **1.**  Download **RazrPHP** and put it in your home folder *(~/)* (same folder as the aws_php_sdk)
+ * **2.**  At the top of every file using **RAZR**, put in:
 ```php
 require ('razrAWS.php');
 use razrPHP as RAZR;
 $razr = new RAZR\rDynamo ();
 ```
- * **3.** Thats it! You can now access RAZR Functions easily.
+ * **3.**  Thats it! You can now access RAZR Functions easily.
 
 ### **Razr Methods**
- * #### **DynamoDB**
+ * #### DynamoDB
     * ##### Describe Table
         *  `$t = $razr->describeTable('qnaMainFrame');`
 
