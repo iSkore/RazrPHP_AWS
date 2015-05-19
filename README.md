@@ -22,6 +22,7 @@ Simple to make AWS calls. Settup is easy too!
 #### **AWS Setup**
 ###### - AWS doesn't lay out the Credentials setup for you set by step, so I will.
  * **1.** Go to AWS and get your **PUBLIC_KEY** and **PRIVATE_KEY**
+    * AWS does have tutorials for this [HERE](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html) and [HERE](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
 
  * **2.** Open Terminal
  * **3.** If you haven't created your credentials yet, in Terminal's fresh page, type in:</br>
