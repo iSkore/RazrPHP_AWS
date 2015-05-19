@@ -58,7 +58,7 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 ##### &nbsp;&nbsp;DynamoDB
 ###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Describe Table
 ```PHP
-    $razr->describeTable('[table_name]');
+    $t = $razr->describeTable('[table_name]');
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Responses will be in JSON format. So you can access your response:
 ```PHP

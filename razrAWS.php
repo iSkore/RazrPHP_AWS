@@ -13,43 +13,19 @@
         }
         
         function describeTable ($table) {
-            $y = $this->ddb->describeTable(array( 'TableName' => $table));
-            return $y;
+            $a = $this->ddb->describeTable(array('TableName' => $table));
+            return $a;
+        }
+        
+        function putItem ($arguments) {
+            $a = $this->ddb->putItem($arguments);
+            return $a;
+        }
+        
+        function getItem ($arguments) {
+            array_push($arguments, array('ConsistentRead' => true));
+            $a = $this->ddb->getItem($arguments);
+            return $a;
         }
     }
-?>
-
-
-<?php
-/*
-$resultf = $dynamoDb->getItem(array(
-                'TableName' => 'cerenityDeveloperTable',
-                'Key'       => array(
-                    'cerenityDefault'   => array('S' => 'CERE'),
-                    'cerenityUser' => array('S' => $input3a)
-                 )
-            ));
-            if (empty($resultf['Item']['cerenityUser']['S'])) {
-                $resulta = $dynamoDb->putItem(array(
-                    'TableName' => 'cerenityDeveloperTable',
-                    'Item' => array(
-                        'cerenityDefault' => array('S' => 'CERE'),
-                        'cerenityUser' => array('S' => $input3a),
-                        'cerenityFname' => array('S' => $input1a),
-                        'cerenityLname' => array('S' => $input2a)
-                    )
-                ));
-                if (isset ($resulta)) {
-                    echo 2;
-                    exit;
-                } else {
-                    echo 3;
-                    exit;
-                }
-            } else {
-                echo 0;
-                exit;
-            }
-            */
-
 ?>
