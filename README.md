@@ -75,16 +75,16 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;PUT ITEM
 
-```PHP
-    $args = array(
-        'TableName' => '[table_name]',
-        'Item' => array(
-            'hashKey'      => array('S' => '[hash_key]'),
-            'rangeKey'    => array('S' => '[range_key]')
-        )
-    );
-    $t = $razr->putItem($args);
-```
+    ```PHP
+        $args = array(
+            'TableName' => '[table_name]',
+            'Item' => array(
+                'hashKey'      => array('S' => '[hash_key]'),
+                'rangeKey'    => array('S' => '[range_key]')
+            )
+        );
+        $t = $razr->putItem($args);
+    ```
 
 
 ## License
