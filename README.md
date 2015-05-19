@@ -32,7 +32,7 @@ Simple to make AWS calls. Settup is easy too!
     * The *nano* function page will open up. You will see `GNU nano 2.0.6...` at the top.
  * **4.** Inside the *nano* page, type in:</br>
 
-```
+```Shell
 [default]
 aws_access_key_id = public_key_ABCDEFGHIJKLMNOPQRSTUVWXYZ
 aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
@@ -50,7 +50,7 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 
 #### **Razr Setup**
  * **1.**  Download **RazrPHP** and put it in your home folder *(~/)* (same folder as the aws_php_sdk)
- * **2.**  At the top of every file using **RAZR**, put in:
+ * **2.**  At the top of the file using **RAZR**, put in:
 ```PHP
     require ('razrAWS.php');
     use razrPHP as RAZR;
@@ -72,6 +72,20 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
     // - OR
     $t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
 ```
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;PUT ITEM
+
+```PHP
+    $args = array(
+        'TableName' => '[table_name]',
+        'Item' => array(
+            'hashKey'      => array('S' => '[hash_key]'),
+            'rangeKey'    => array('S' => '[range_key]')
+        )
+    );
+    $t = $razr->putItem($args);
+```
+
 
 ## License
 
