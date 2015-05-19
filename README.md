@@ -29,9 +29,10 @@ Simple to make AWS calls. Settup is easy too!
     * The *nano* function page will open up. You will see `GNU nano 2.0.6...` at the top.
  * **3.** Inside the *nano* page, type in:</br>
 
-```[default]
+```
+[default]
 aws_access_key_id = public_key_ABCDEFGHIJKLMNOPQRSTUVWXYZ
-aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y```  </br>
+aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y```</br>
 
     * AWS does have tutorials for this [HERE](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html) and [HERE](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
  * **4.** Once you've typed it out, hit **CONTROL + X** (Yes...Control, not Command).
