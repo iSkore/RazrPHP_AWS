@@ -33,7 +33,8 @@ Simple to make AWS calls. Settup is easy too!
 [default]
 aws_access_key_id = public_key_ABCDEFGHIJKLMNOPQRSTUVWXYZ
 aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
-``` `
+```
+    * `[default]`
 
     * AWS does have tutorials for this [HERE](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html) and [HERE](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
  * **4.** Once you've typed it out, hit **CONTROL + X** (Yes...Control, not Command).
