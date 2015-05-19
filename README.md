@@ -58,9 +58,9 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 ```
  * **3.**  Thats it! You can now access RAZR Functions easily.
 
-#### **Razr Methods**
-##### &nbsp;&nbsp;DynamoDB
-###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Describe Table
+### **Razr Methods**
+#### &nbsp;&nbsp;DynamoDB
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Describe Table
 ```PHP
     $t = $razr->describeTable('[table_name]');
 ```
@@ -73,18 +73,18 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
     $t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
 ```
 
-###### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;PUT ITEM
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;PUT ITEM
 
-    ```PHP
-        $args = array(
-            'TableName' => '[table_name]',
-            'Item' => array(
-                'hashKey'      => array('S' => '[hash_key]'),
-                'rangeKey'    => array('S' => '[range_key]')
-            )
-        );
-        $t = $razr->putItem($args);
-    ```
+```PHP
+    $args = array(
+        'TableName' => '[table_name]',
+        'Item' => array(
+            'hashKey'      => array('S' => '[hash_key]'),
+            'rangeKey'    => array('S' => '[range_key]')
+        )
+    );
+    $t = $razr->putItem($args);
+```
 
 
 ## License
