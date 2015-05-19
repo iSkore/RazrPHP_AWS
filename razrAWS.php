@@ -17,14 +17,22 @@
             return $a;
         }
         
-        function putItem ($arguments) {
-            $a = $this->ddb->putItem($arguments);
+        function putItem ($tname, $arguments) {
+            $args = array(
+                'TableName' => $tname,
+                'Item' => $arguments
+            );
+            $a = $this->ddb->putItem($args);
             return $a;
         }
         
-        function getItem ($arguments) {
-            array_push($arguments, array('ConsistentRead' => true));
-            $a = $this->ddb->getItem($arguments);
+        function getItem ($tname, $arguments) {
+            $args = array(
+                'ConsistentRead' => true,
+                'TableName' => $tname,
+                'Key' => $arguments
+            );
+            $a = $this->ddb->getItem($args);
             return $a;
         }
     }

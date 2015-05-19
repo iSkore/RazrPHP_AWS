@@ -10,23 +10,13 @@
     //echo $t->getPath('Table/ProvisionedThroughput/ReadCapacityUnits');
     
     //        PUT ITEM
-    /*$args = array('TableName' => 'razrTable',
-        'Item' => array(
-            'hashKey'      => array('S' => 'Super'),
-            'rangeKey'    => array('S' => 'Coolss')
-        )
-    );*/
-    //$t = $razr->putItem($args);
+    //$r = array('hashKey' => array('S' => 'Super'), 'rangeKey' => array('S' => 'Coolssss'));
+    //$t = $razr->putItem('razrTable', $r);
+    //echo $t;
     
     //        GET ITEM
-    /*$args = array(
-        'TableName' => 'razrTable',
-        'Key' => array(
-            'hashKey'      => array('S' => 'Super'),
-            'rangeKey'     => array('S' => 'Coolss')
-        )
-    );*/
-    //$t = $razr->getItem($args);
+    //$r = array('hashKey' => array('S' => 'Super'), 'rangeKey' => array('S' => 'Coolss'));
+    //$t = $razr->getItem('razrTable', $r);
+    //echo $t;
     //echo $t->getPath('Item/rangeKey/S');
-    
 ?>
