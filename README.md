@@ -65,30 +65,31 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 ```PHP
     $t = $razr->describeTable('[table_name]');
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Responses will be in JSON format. So you can access your response:
-```PHP
-    /*Read the values accessable via*/ echo $razr; //for the JSON response
-    //Write the path of the value you would like:
-    $t->getPath('Table/ProvisionedThroughput/ReadCapacityUnits');
-    // - OR
-    $t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
-```
 </br>
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;PUT ITEM
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Put Item
 
 ```PHP
     $r = array('hashKey' => array('S' => '[hash_key]'), 'rangeKey' => array('S' => '[range_key]'));
     $t = $razr->putItem('[table_name]', $r);
 ```
 </br>
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;PUT ITEM
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Get Item
 
 ```PHP
-    $r = array('hashKey' => array('S' => 'Super'), 'rangeKey' => array('S' => 'Coolss'));
-    $t = $razr->getItem('razrTable', $r);
+    $r = array('hashKey' => array('S' => '[hash_key]'), 'rangeKey' => array('S' => '[range_key]'));
+    $t = $razr->getItem('[table_name]', $r);
     $t->getPath('Item/rangeKey/S');
     // - OR
     $t['Item']['rangeKey']['S'];
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Responses will be in JSON format. So you can access your response:
+```PHP
+/*Read the values accessable via*/ echo $razr; //for the JSON response
+//Write the path of the value you would like:
+$t->getPath('Table/ProvisionedThroughput/ReadCapacityUnits');
+// - OR
+$t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
 ```
 
 
