@@ -83,13 +83,29 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
     $t['Item']['rangeKey']['S'];
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Responses will be in JSON format. So you can access your response:
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All responses will be in JSON format. So you can access your response:
 ```PHP
 /*Read the values accessable via*/ echo $razr; //for the JSON response
 //Write the path of the value you would like:
 $t->getPath('Table/ProvisionedThroughput/ReadCapacityUnits');
 // - OR
 $t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
+```
+</br>
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Query Items
+
+```PHP
+$conditions = array();
+array_push($conditions, array([hash_key name], [hash_key type], [hash_key value], [Operand]));
+$t = $razr->queryItems('[table_name]', $conditions);
+```
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read your response query:
+```PHP
+foreach ($t as $item) {
+    echo $item['[range_key]']['S']."\n";
+}
 ```
 
 
