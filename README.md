@@ -32,7 +32,7 @@ Simple to make AWS calls. Settup is easy too!
     * The *nano* function page will open up. You will see `GNU nano 2.0.6...` at the top.
  * **4.** Inside the *nano* page, type in:</br>
 
-```Shell
+```sh
 [default]
 aws_access_key_id = public_key_ABCDEFGHIJKLMNOPQRSTUVWXYZ
 aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
@@ -51,7 +51,7 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 #### **Razr Setup**
  * **1.**  Download **RazrPHP** and put it in your home folder *(~/)* (same folder as the aws_php_sdk)
  * **2.**  At the top of the file using **RAZR**, put in:
-```PHP
+```php
     require ('razrAWS.php');
     use razrPHP as RAZR;
     $razr = new RAZR\rDynamo ();
@@ -61,21 +61,35 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 ### **Razr Methods**
 #### &nbsp;&nbsp;DynamoDB  
 </br>
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Create Table
+
+```php
+    $hK = array('hashKey', 'S', 'HASH');
+    $rK = array('rangeKey', 'S', 'RANGE');
+    $tput = array(1, 1);
+    $t = $razr->razrTable('[table_name]', $hK, $rK, $tput);
+    echo $t;
+```
+ * All of the above parameters are required except for 'hashKey' and 'rangeKey'. Those are editable to your choice.
+ * You can add all other attributes in you first `Put Item` request
+ * Recommendation - wait at least 5 seconds before making changes to the table. You can do this easily with `sleep(5);`
+
+</br>
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Describe Table
-```PHP
+```php
     $t = $razr->describeTable('[table_name]');
 ```
 </br>
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Put Item
 
-```PHP
+```php
     $r = array('hashKey' => array('S' => '[hash_key]'), 'rangeKey' => array('S' => '[range_key]'));
     $t = $razr->putItem('[table_name]', $r);
 ```
 </br>
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Get Item
 
-```PHP
+```php
     $r = array('hashKey' => array('S' => '[hash_key]'), 'rangeKey' => array('S' => '[range_key]'));
     $t = $razr->getItem('[table_name]', $r);
     $t->getPath('Item/rangeKey/S');
@@ -85,7 +99,7 @@ aws_secret_access_key = private_key_s0m3_CR42Y_l3tt3rS_i5y0ur53cr3tK3y
 
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All responses will be in JSON format. So you can access your response:
-```PHP
+```php
 /*Read the values accessable via*/ echo $razr; //for the JSON response
 //Write the path of the value you would like:
 $t->getPath('Table/ProvisionedThroughput/ReadCapacityUnits');
@@ -95,16 +109,19 @@ $t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
 </br>
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;Query Items
 
-```PHP
+```php
 $conditions = array();
-array_push($conditions, array('hashKey', [hash_key type ('S')], '[hash_key]', [Operand ('EQ')]));
+$conditions['hash'] = 'hashKey';
+$conditions['type'] = 'S';
+$conditions['value']= '[hash_key]';
+$conditions['oper'] = '[comparison_operator]';
 $t = $razr->queryItems('[table_name]', $conditions);
 ```
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read your response query:
-```PHP
+```php
 foreach ($t as $item) {
-    echo $item['range_key']['S']."\n";
+    echo $item['rangeKey']['S']."\n";
 }
 ```
 

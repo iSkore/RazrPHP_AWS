@@ -12,6 +12,12 @@
             $this->ddb = Aws::factory('config.php')->get('dynamodb');
         }
         
+        function razrTable ($table, $hk, $rk, $tput) {
+            $creation=array('TableName'=>$table,'AttributeDefinitions'=>array(array('AttributeName'=>$hk[0],'AttributeType'=>$hk[1]),array('AttributeName'=>$rk[0],'AttributeType'=>$rk[1])),'KeySchema'=>array(array('AttributeName' => $hk[0],'KeyType'=>$hk[2]),array('AttributeName'=>$rk[0],'KeyType'=>$rk[2])),'ProvisionedThroughput'=>array('ReadCapacityUnits'=>$tput[0],'WriteCapacityUnits'=>$tput[1]));
+            $a = $this->ddb->createTable($creation);
+            return $a;
+        }
+        
         function describeTable ($table) {
             $a = $this->ddb->describeTable(array('TableName' => $table));
             return $a;
@@ -37,24 +43,22 @@
         }
         
         function queryItems ($tname, $objs) {
-            $kconds = array();
-            foreach ($objs as $key => $v) {
-                $f = array($v[0] => array(
-                    'AttributeValueList' => array(
-                        array($v[1] => $v[2])
-                    ),
-                    'ComparisonOperator' => $v[3]
-                ));
-                array_push($kconds, $f);
-            }
+            $f = array($objs['hash'] => array(
+                'AttributeValueList' => array(
+                    array($objs['type'] => $objs['value'])
+                ),
+                'ComparisonOperator' => $objs['oper']
+            ));
             
             $iterator = array(
                 'TableName'     => $tname,
-                'KeyConditions' => array_pop($kconds)
+                'KeyConditions' => $f
             );
             
             $a = $this->ddb->getIterator('Query', $iterator);
             return $a;
         }
+        
+        
     }
 ?>
