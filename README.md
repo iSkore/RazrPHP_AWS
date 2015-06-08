@@ -97,14 +97,14 @@ $t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
 
 ```PHP
 $conditions = array();
-array_push($conditions, array([hash_key name ('hashKey')], [hash_key type ('S')], [hash_key value ('Hello')], [Operand ('EQ')]));
+array_push($conditions, array('hashKey', [hash_key type ('S')], '[hash_key]', [Operand ('EQ')]));
 $t = $razr->queryItems('[table_name]', $conditions);
 ```
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read your response query:
 ```PHP
 foreach ($t as $item) {
-    echo $item['[range_key]']['S']."\n";
+    echo $item['range_key']['S']."\n";
 }
 ```
 
