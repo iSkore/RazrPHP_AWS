@@ -97,7 +97,7 @@ $t['Table']['ProvisionedThroughput']['ReadCapacityUnits'];
 
 ```PHP
 $conditions = array();
-array_push($conditions, array([hash_key name], [hash_key type], [hash_key value], [Operand]));
+array_push($conditions, array([hash_key name ('hashKey')], [hash_key type ('S')], [hash_key value ('Hello')], [Operand ('EQ')]));
 $t = $razr->queryItems('[table_name]', $conditions);
 ```
 </br>
