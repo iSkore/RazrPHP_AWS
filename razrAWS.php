@@ -1,15 +1,18 @@
 <?php namespace razrPHP;
     
     require 'aws/aws-autoloader.php';
-    
-    use Aws\Common\Aws;
+    date_default_timezone_set ('America/New_York');
     use Aws\DynamoDb\DynamoDbClient;
     
     class rDynamo {
         public $ddb;
         
         function __construct () {
-            $this->ddb = Aws::factory('config.php')->get('dynamodb');
+            $this->ddb = new DynamoDbClient([
+                'profile' => 'default',
+                'region'  => 'us-east-1',
+                'version' => 'latest'
+            ]);
         }
         
         function razrTable ($table, $hk, $rk, $tput) {
@@ -58,7 +61,5 @@
             $a = $this->ddb->getIterator('Query', $iterator);
             return $a;
         }
-        
-        
     }
 ?>
