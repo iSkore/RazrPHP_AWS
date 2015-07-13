@@ -2,16 +2,25 @@
     
     require 'aws/aws-autoloader.php';
     date_default_timezone_set ('America/New_York');
+    use Aws\Credentials\CredentialProvider;
     use Aws\DynamoDb\DynamoDbClient;
+    use Aws\Ec2\Ec2Client;
     
-    class rDynamo {
+    class rAWS {
         public $ddb;
+        public $ec2;
         
         function __construct () {
+            $provider = CredentialProvider::defaultProvider();
             $this->ddb = new DynamoDbClient([
-                'profile' => 'default',
-                'region'  => 'us-east-1',
-                'version' => 'latest'
+                'region'      => 'us-east-1',
+                'version'     => 'latest',
+                'credentials' => $provider
+            ]);
+            $this->ec2 = new Ec2Client([
+                'region'      => 'us-east-1',
+                'version'     => 'latest',
+                'credentials' => $provider
             ]);
         }
         
@@ -59,6 +68,29 @@
             );
             
             $a = $this->ddb->getIterator('Query', $iterator);
+            return $a;
+        }
+        
+        function takeImage ($instID, $amiName) {
+            $datea = date_format(date_create(), 'm-d-Y H:i:s');
+            $datex = date_format(date_create(), 'm_d_Y_H_i_s');
+            $a = $this->ec2->createImage([
+                'BlockDeviceMappings' => [
+                    [
+                        'DeviceName' => '/dev/sda1',
+                        'Ebs' => [
+                            'DeleteOnTermination' => true,
+                            'Encrypted' => false,
+                            'VolumeSize' => 10,
+                            'VolumeType' => 'standard',
+                        ]
+                    ]
+                ],
+                'Description' => 'Image of server '.$instID.' taken on '.$datea,
+                'InstanceId' => $instID,
+                'Name' => $datex.'_Image_'.$amiName,
+                'NoReboot' => false
+            ]);
             return $a;
         }
     }

@@ -5,7 +5,7 @@ return array(
     'services' => array(
         'default_settings' => array(
             'params' => array(
-                'profile' => 'default',
+                'profile' => 'emprofile',
                 'region' => 'us-east-1'
             )
         )
