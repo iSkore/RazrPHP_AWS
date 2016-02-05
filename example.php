@@ -1,9 +1,9 @@
 <?php
 	require ('razrAWS.php');
 	use razrPHP as RAZR;
-	$razr = new  RAZR\rDynamo ();
+	$razr = new  RAZR\rAWS ();
     
-    //Function complements of @sivanesh-govindan
+    // function complements of @sivanesh-govindan
 	function get_client_ip() {
 		$ipaddress = '';
 		if ($_SERVER['HTTP_CLIENT_IP'])
